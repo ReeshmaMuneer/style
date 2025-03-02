@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+</head>
+<body>
+    <h1>Employee Details</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Branch</th>
+
+                <th>Department</th>
+                <th>Position</th>
+                <th>Specializations</th>
+
+                <th>Years</th>
+
+            </tr>
+        </thead>
+        <tbody id="demo"></tbody>
+    </table>
+    <script>
+        const xhr=new XMLHttpRequest();
+        xhr.onload=function(){
+            const xmlDoc=this.responseXML;
+            let txt="";
+            const x=xmlDoc.getElementsByTagName("Employee");
+            //update sarah johson
+            for(let j=0;j<x.length;j++){
+                const name=x[j].getElementsByTagName("Name")[0].textContent.trim();
+                if(name==="Sarah johson"){
+                    x[j].getElementsByTagName("Position")[0].textContent="Senior Loan Officer";
+                    x[j].getElementsByTagName("Years")[0].textContent="9";
+                }
+            }
+            //table display
+            for(let i=0;i<x.length;i++)
+        {
+            const ID=x[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue;
+            const Name=x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
+            const Branch=x[i].getElementsByTagName("Branch")[0].childNodes[0].nodeValue;
+
+            const Department=x[i].getElementsByTagName("Branch")[0].getAttribute("Department");
+            const Position=x[i].getElementsByTagName("Position")[0].childNodes[0].nodeValue;
+            const Specializations =x[i].getAttribute("Specializations");
+
+            const Years=x[i].getElementsByTagName("Years")[0].childNodes[0].nodeValue;
+
+            txt+=`
+               <tr>
+                <td>${ID}</td>
+                 <td>${Name}</td>
+                  <td>${Branch}</td>
+
+                   <td>${Department}</td>
+                    <td>${Position}</td>
+                     <td>${Specializations}</td>
+                      <td>${Years}</td>
+                </tr>
+            `;
+
+        }
+            document.getElementById("demo").innerHTML=txt;
+
+        };
+        xhr.open("GET","employeeDetails.xml");
+        xhr.send();
+    </script>
+    
+</body>
+</html>

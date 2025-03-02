@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Employees>
+
+<Employee Specialization="DBMS">
+
+  <EmployeeID>1001</EmployeeID>
+  <Name>Rifai Kariyappar</Name>
+  <Faculty Dept="ICT">Technology</Faculty>
+  <Designation>Senior Lecturer</Designation>
+  <YearsOfExperience>15</YearsOfExperience>
+
+</Employee>
+
+<Employee Specialization="HighWays and traffics">
+  <EmployeeID>1002</EmployeeID>
+  <Name>Ilham Jazeel</Name>
+  <Faculty Dept="Civil">Engneering</Faculty>
+  <Designation>Senior Lecturer</Designation>
+  <YearsOfExperience>25</YearsOfExperience>
+</Employee>
+
+<Employee Specialization="Fluid Dynamics">
+  <EmployeeID>1003</EmployeeID>
+  <Name>Gunawardene</Name>
+  <Faculty Dept="Mathemetics">Applied Science</Faculty>
+  <Designation>Lecturer(prob)</Designation>
+  <YearsOfExperience>3</YearsOfExperience>
+</Employee>
+
+<Employee Specialization="Economics">
+  <EmployeeID>1004</EmployeeID>
+  <Name>Riyath</Name>
+  <Faculty Dept="Accountancy">Management</Faculty>
+  <Designation>Lecturer(Uncon)</Designation>
+  <YearsOfExperience>5</YearsOfExperience>
+</Employee>
+
+<Employee Specialization="Human Rights">
+  <EmployeeID>1005</EmployeeID>
+  <Name>Kamalasiri</Name>
+  <Faculty Dept="Political Science">Arts and Culture</Faculty>
+  <Designation>Lecturer(prob)</Designation>
+  <YearsOfExperience>4</YearsOfExperience>
+</Employee>
+
+</Employees>

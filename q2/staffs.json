@@ -1,0 +1,46 @@
+{
+    "Employees":[
+        {
+            "EmployeeID":"1001",
+            "Name":"Rifai Kariyappar",
+            "Faculty":"Technology",
+            "Designation":"Senior Lecturer",
+            "YearsOfExperience":"15"
+        },
+
+        {
+            "EmployeeID":"1002",
+            "Name":"Ilham Jazeel",
+            "Faculty":"Engneering",
+            "Designation":"Senior Lecturer",
+            "YearsOfExperience":"25"
+        },
+
+        {
+            "EmployeeID":"1003",
+            "Name":"Gunawardene",
+            "Faculty":"Applied Science",
+            "Designation":"Lecturer(prob)",
+            "YearsOfExperience":"3"
+        },
+
+        
+
+        {
+            "EmployeeID":"1004",
+            "Name":"Riyath",
+            "Faculty":"Management",
+            "Designation":"Lecturer(Uncon)",
+            "YearsOfExperience":"5"
+        },
+
+        {
+            "EmployeeID":"1005",
+            "Name":"Kamalasiri",
+            "Faculty":"Arts and Culture",
+            "Designation":"Lecturer(prob)",
+            "YearsOfExperience":"4"
+        }
+    ]
+
+}

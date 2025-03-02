@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acadamic staffs</title>
+</head>
+<body>
+    <H1>Academic Staff Details</H1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Employee_ID</th>
+                <th>Name</th>
+                <th>Faculty</th>
+                <th>Department</th>
+                <th>Designation</th>
+                <th>Research_Area</th>
+                <th>Years_of_Experience</th>
+            </tr>
+        </thead>
+        <tbody id="demo"></tbody>
+    </table>
+
+   <script>
+    const xhr=new XMLHttpRequest();
+    xhr.onload=function()
+    {
+        const xmlDoc=this.responseXML;
+        const x=xmlDoc.getElementsByTagName("Employee");
+        //updating 
+        for(let j=0;j<x.length;j++)
+    {
+        const name=x[j].getElementsByTagName("Name")[0].textContent.trim();
+        if(name=="Gunawardene"){
+            x[j].getElementsByTagName("Designation")[0].textContent="Senior Lecturer";
+            x[j].setAttribute("Specialization","Advance Mathemetics");
+
+
+        }
+    }
+    //table display
+    let txt="";
+    for(let i=0;i<x.length;i++)
+    {
+        const Employee_ID=x[i].getElementsByTagName("EmployeeID")[0].childNodes[0].nodeValue;
+        const Name=x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
+        const Faculty=x[i].getElementsByTagName("Faculty")[0].childNodes[0].nodeValue;
+        const Department=x[i].getElementsByTagName("Faculty")[0].getAttribute("Dept");
+        const Designation=x[i].getElementsByTagName("Designation")[0].childNodes[0].nodeValue;
+        const Research_Area=x[i].getAttribute("Specialization");
+        const Years_of_Experience=x[i].getElementsByTagName("YearsOfExperience")[0].childNodes[0].nodeValue;
+       
+        txt+=`
+        <tr>
+            <td>${Employee_ID}</td>
+            <td>${Name}</td>
+            <td>${Faculty}</td>
+            <td>${Department}</td>
+            <td>${Designation}</td>
+            <td>${Research_Area}</td>
+            <td>${Years_of_Experience}</td>
+            </tr>
+        `;
+
+    }
+    document.getElementById("demo").innerHTML=txt;
+
+
+    }
+    xhr.open("GET","staffs.xml");
+    xhr.send();
+
+   </script>
+    
+</body>
+</html>

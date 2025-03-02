@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Product Catalog</h1>
+    <p>
+        product 1:Capalo<br>
+        product 2:toaster<br>
+        product 3:oven<br>
+        product 4:blender<br>
+        product 5:pan<br>
+
+    </p>
+    <button id="load">Load More</button>
+    <div id="display"></div>
+    <script>
+        function loadMore()
+        {
+            const xhr=new XMLHttpRequest();
+            xhr.onload=function(){
+                const products=this.responseText.split("\n");
+                newProducts=products.map(product=>`<div>${product}<div>`).join(" ");
+                document.getElementById("display").innerHTML=newProducts;
+
+            }
+            xhr.open("GET","product.txt");
+            xhr.send();
+
+        }
+        document.getElementById("load").addEventListener("click",loadMore);
+    </script>
+</body>
+
+</html>

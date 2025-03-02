@@ -1,0 +1,47 @@
+package com.example.TaxCalculator;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+
+
+
+public class taxController {
+	@GetMapping("/{tax}/{salary}")
+	
+	public String CalculateSalary(@PathVariable double salary)
+	{
+		double tax=0.0;
+		double gross_salary=0.0;
+		if(salary<=100000)
+		{
+			return "NO Tax";
+		}
+		else if(salary<=200000)
+		{
+			tax=(salary*10)/100;
+			gross_salary=salary-tax;
+			return String.format("Gross Salary is Rs %.2f",gross_salary);
+		}
+		
+		else if(salary<=400000)
+		{
+			tax=(salary*20)/100;
+			gross_salary=salary-tax;
+			return String.format("Gross Salary is Rs %.2f",gross_salary);
+		}
+		
+		else
+		{
+			tax=(salary*30)/100;
+			gross_salary=salary-tax;
+			return String.format("Gross Salary is Rs %.2f",gross_salary);
+		}
+		
+		
+	}
+	
+
+}

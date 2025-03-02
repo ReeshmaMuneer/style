@@ -1,0 +1,10 @@
+product 6:iphone
+product 6:washing machine
+product 6:Air Fryer
+product 6:i watch
+product 6:rice Cooker
+product 6:Radio
+product 6:TV
+product 6:i pad
+product 6:wallet
+product 6:scanner
